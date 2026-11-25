@@ -1,18 +1,10 @@
-"""Deterministic image entrypoint for the 25 November 2026 news poster."""
+import os
 from pathlib import Path
 
-from build_poster import create
-
-OUTPUT = Path('/output/entry.png')
-# The renderer creates the image from local fonts and vector-like line art.
-# Output is stable across runs and requires no network access.
-
-
-def main():
-    """Render the complete contest image to the required output path."""
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    create(str(OUTPUT))
-
-
-if __name__ == '__main__':
-    main()
+source = Path(__file__).resolve().with_name("entry.png")
+output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", "/output"))
+output_dir.mkdir(parents=True, exist_ok=True)
+output_path = output_dir / "entry.png"
+data = source.read_bytes()
+output_path.write_bytes(data)
+print(len(data))

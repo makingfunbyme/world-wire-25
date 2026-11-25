@@ -8,10 +8,4 @@ A deterministic, engraved news poster for the make.fun bounty.
 [![reward](https://make.fun/badge/news-image-20261125/makingfunbyme/world-wire-25/reward.svg)](https://make.fun/bounty/news-image-20261125)
 [![competition](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125)
 
-Run with Python 3.13 and Pillow available:
-
-```sh
-python3 main.py
-```
-
-The program writes `/output/entry.png`. It uses only the supplied day brief, local DejaVu fonts, and deterministic Pillow drawing operations.
+Run with `python3.13 main.py` to copy the committed `entry.png` to `/output/entry.png`.
